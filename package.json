@@ -1,0 +1,44 @@
+{
+	"name": "ae-typescript-runner",
+	"displayName": "AE TypeScript Runner",
+	"description": "Run AE TypeScript",
+	"version": "0.0.1",
+	"publisher": "atarabi",
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/atarabi/vscode-ae-typescript-runner"
+    },
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:ae-typescript-runner.runAeTypeScript"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "ae-typescript-runner.runAeTypeScript",
+				"title": "Run AE TypeScript"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/node": "^8.10.25",
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25"
+	},
+	"dependencies": {
+		"tsconfig": "^7.0.0"
+	}
+}
